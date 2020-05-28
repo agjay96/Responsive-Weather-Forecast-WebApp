@@ -14,12 +14,12 @@ It also supports adding cities to and removing cities from the Favorites tab and
 <p ><b>
 <h3>Search Page</h3>
 <img height="350" width="220" src="https://github.com/agjay96/Responsive-Weather-Forecast-WebApp/blob/master/images/Step1.png">
-  <img height="350" width="220" src="https://github.com/agjay96/Responsive-Weather-Forecast-WebApp/blob/master/images/Step2.png"><br><br>
+  <img height="360" width="225" src="https://github.com/agjay96/Responsive-Weather-Forecast-WebApp/blob/master/images/Step2.png"><br><br>
 <h3>Current Tab</h3>
 <img height="350" width="220" src="https://github.com/agjay96/Responsive-Weather-Forecast-WebApp/blob/master/images/Step3.png"><br><br>
 <h3>Hourly Tab</h3>
 <img height="350" width="220" height="350" width="220" src="https://github.com/agjay96/Responsive-Weather-Forecast-WebApp/blob/master/images/Step3.5.png">
-  <img src="https://github.com/agjay96/Responsive-Weather-Forecast-WebApp/blob/master/images/Step4.png"><br><br>
+  <img height="350" width="220" src="https://github.com/agjay96/Responsive-Weather-Forecast-WebApp/blob/master/images/Step4.png"><br><br>
 <h3>Weekly Tab</h3>
 <img height="350" width="220" src="https://github.com/agjay96/Responsive-Weather-Forecast-WebApp/blob/master/images/Step5.png">
   <img height="350" width="220" src="https://github.com/agjay96/Responsive-Weather-Forecast-WebApp/blob/master/images/Step6.png"><br><br>
