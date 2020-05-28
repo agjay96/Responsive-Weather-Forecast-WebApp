@@ -1,0 +1,37 @@
+<nav class="navbar nav-tabs">
+    <ul class="nav ">
+        <li class="nav-item">
+            <a class="nav-link " style="color: black" data-toggle="tab" href="javascript:void(0)" (click)="changeTab('Current')" [ngClass]="{active:currentTab=='Current'}">Current</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " style="color: black" data-toggle="tab" href="javascript:void(0)" (click)="changeTab('Hourly')" [ngClass]="{active:currentTab=='Hourly'}">Hourly</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " style="color: black" data-toggle="tab" href="javascript:void(0)" (click)="changeTab('Weekly')" [ngClass]="{active:currentTab=='Weekly'}">Weekly</a>
+        </li>
+    </ul>
+    <ul class="nav fav-icons">
+        <li class="nav-item" (click)="sendToTwitter()">
+            <a class="nav-link " href="javascript:void(0)">
+                <i class="fa fa-twitter" style="color: #00acee;font-size:42px"></i>
+            </a>
+        </li>
+        <li class="nav-item" (click)="sendToFavorites()">
+            <a class="nav-link " href="javascript:void(0)" [style.color]="isAlreadyStarred?'gold':'black'">
+                <i class="fa" style="font-size:42px" [ngClass]="{'fa-star-o':!isAlreadyStarred,'fa-star':isAlreadyStarred}"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div class="tab-content">
+    <div *ngIf="currentTab=='Current'" class="tab-pane active">
+        <app-temp-card (dataLoaded)="dataLoaded()"></app-temp-card>
+    </div>
+    <div *ngIf="currentTab=='Hourly'" class="tab-pane active">
+        <app-hourly></app-hourly>
+    </div>
+    <div *ngIf="currentTab=='Weekly'" class="tab-pane active" style="height: 400px;">
+        <app-weekly></app-weekly>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.odd_row{
+    background-color:#6D9AB0;
+}
+.even_row{
+    background-color:#88C5E3;
+}
+
+img.table_seal{
+	height:50px;
+	width:50px;
+	border-radius: 50%;
+}
+
+tr.norecord{
+	background-color: #F8EAA9;
+	color: #8B602B;
+}
+
+td.deletefav{
+	right: 12%;
+}

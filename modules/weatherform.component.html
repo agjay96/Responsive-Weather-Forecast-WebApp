@@ -1,0 +1,81 @@
+<div class="card shadow-lg p-3" style="background-color: #4A8CAC;" >
+    <div class="card-body text-white align-items-center justify-content-center " >
+        <h4 class="align-self-center text-center text-white font-weight-medium">Weather Search</h4>
+        <br>
+        <form [formGroup]="wetherForm" novalidate>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Street
+                    <span class="text-danger font-weight-bold">*</span>
+                </label>
+                <div class="col-sm-6">
+                    <input formControlName="street" name="street" class="form-control border-dark block" placeholder="Enter Street Name" (input)="onBlur('street');" (blur)="onBlur('street');">
+                    <div style="color: red" *ngIf="street_error">
+                        Please enter a street
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">City
+                    <span class="text-danger font-weight-bold">*</span>
+                </label>
+                <div class="col-sm-6 ng-autocomplete border-dark">
+                    <ng-autocomplete [data]="predictions" [searchKeyword]="keyword" (selected)='selectEvent($event)' (inputChanged)='onChangeSearch($event)'
+                        (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate"
+                        placeHolder="Enter City Name" (closed)="onBlur('city');" [disabled]="this.wetherForm.value.current" formControlName="city">
+                    </ng-autocomplete>
+
+                    <ng-template #itemTemplate let-item>
+                        <a [innerHTML]="item.name"></a>
+                    </ng-template>
+
+                    <ng-template #notFoundTemplate let-notFound>
+                        <div [innerHTML]="notFound"></div>
+                    </ng-template>
+                    <div style="color: red" *ngIf="city_error">
+                        Please enter a City
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">State
+                    <!-- <span class="text-danger font-weight-bold">*</span> -->
+                </label>
+                <div class="col-sm-4">
+                    <select formControlName="state" name="state" class="form-control  border-dark" (blur)="onBlur('state');" (change)="onBlur('state');">
+                        <option value="">Select State</option>
+                        <option *ngFor="let st of states" value="{{st.abbreviation}}">{{st.name}}</option>
+                    </select>
+                    <div style="color: red" *ngIf="state_error">
+                        Please select a state
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <div class="form-check form-check-inline" style="padding-left: 1rem;">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" formControlName="current" (click)="onCheckBoxClick()">
+                    <label class="form-check-label" for="inlineCheckbox2">Current Location</label>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <div style="padding-left: 1.5rem;">
+                    <button (click)="onSearch()" class="btn btn-light text-secondary m-2 border-dark">
+                        <i class="fa fa-search" style="font-size:16px"></i> Search</button>
+                    <button (click)="onClear()" class="btn btn-light text-secondary m-2 border-dark">
+                        <i class="fa fa-align-right" style="font-size:16px;"></i> Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<table class="table" *ngIf="invalid_error">
+    <thead>
+        <tr class="sandal">
+            <td>Invalid Address</td>
+        </tr>
+    </thead>
+</table>

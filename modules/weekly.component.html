@@ -1,0 +1,59 @@
+<div [ngClass]="{'modal-open':myModal}">
+  <h1 class="weekheader">Weekly Weather</h1>
+<!--   <p class="text-center">
+    <span class="spanblue">gdf</span> Day wise temperature range
+  </p> -->
+  <br/>
+  <div>
+    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+      [chartType]="barChartType" (chartClick)="chartClicked($event)" (chartHover)="chartHovered($event)" [plugins]="barChartPlugins">
+    </canvas>
+  </div>
+
+  <div class="modal" [style.display]="myModal?'block':'none'">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#6D9AB0">
+          <h4 class="modal-title">{{barChartLabels[indexer]}}</h4>
+          <button type="button" class="close" data-dismiss="modal" (click)="myModal=false">&times;</button>
+        </div>
+        <div class="modal-body" style="background-color:#88C5E3">
+          <div class="bg-mine" *ngIf="tempObj" style="border: none;">
+            <div class="card-body align-items-center justify-content-center ">
+              <div class="row">
+                <h2 class="align-self-center text-center text-dark font-weight-bold">{{tempObj.location_info && tempObj.location_info.city}}</h2>
+              </div>
+              <br/>
+              <div class="row" style="margin-top:10px;">
+                <div class="col-sm-12">
+                  <div style="float:left">
+                    <h1 class="5 h15">{{tempObj.currently.temperature}}
+                      <sup>o</sup>F</h1>
+                    <p class="clearp">{{tempObj.currently.summary}}</p>
+                  </div>
+                  <div class="responsiveimge" style="float:left;margin-left:20%;">
+                      <img [src]="iconMapping[tempObj.currently.icon]" style="height:70px;width:70px;margin-top:unset;" *ngIf="tempObj.currently"
+                      />
+                    </div>
+                </div>
+                
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-6"></div>
+                <div class="col-sm-6">
+                  Precipitation:{{tempObj.currently.precipIntensity}}
+                  <br> Chance of Rain:{{tempObj.currently.cloudCover}} %
+                  <br> Wind Speed:{{tempObj.currently.windSpeed}} mph
+                  <br> Humidity:{{tempObj.currently.visibility}} %
+                  <br> Visibility:{{tempObj.currently.precipIntensity}} miles
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

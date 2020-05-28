@@ -1,0 +1,37 @@
+<div class="container">
+
+  <table class="table table-striped" *ngIf="storageItems.length" >
+    <thead>
+      <tr class="odd_row">
+        <th>#</th>
+        <th>Image</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Wish List</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr [class]="i%2==0?'blue2':'odd_row'" *ngFor="let item of storageItems;let i=index;">
+        <td>{{i+1}}</td>
+        <td>
+          <img class="table_seal" [src]="item.imgUrl" *ngIf="item.imgUrl" />
+        </td>
+        <td><a href="javascript:void(0);" (click)="loadCurrentFavorite(item.location)">{{item.location.split(",")[1]}}</a></td>
+        <td>{{item.location.split(",")[2]}}</td>
+        <td (click)="deleteItem(i);" class="deletefav">
+          <i class="fa fa-trash idelete"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+  <table class="table" *ngIf="!storageItems.length">
+    <thead>
+      <tr class="norecord">
+        <td>No Records.</td>
+      </tr>
+    </thead>
+  </table>
+</div>

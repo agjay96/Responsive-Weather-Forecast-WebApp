@@ -1,0 +1,71 @@
+<div class="container">
+        <div id="identity-card">
+                <div class="row">
+                        <div class="col-md-6">
+                                <h2 class="text-dark font-weight-bold">{{tempObj.location_info.location.split(',')[1]}}</h2>
+                        </div>
+                    </div>
+                <div class="row" id="card-content">
+                    <div class="col-md-6">
+                            <h2 class="text-secondary timezone font-weight-bold">{{tempObj.timezone}}</h2>
+            
+                            <h1 class="temp-head">{{tempObj.currently.temperature}}
+                                    <sup>o</sup>F</h1>
+                            <p class="clearp-summary">{{tempObj.currently.summary}}</p>
+                    </div>
+            
+                    <div class="col-md-6">
+                            <div class="responsiveimge">
+                                    <img [src]="imgUrl" style="margin-top:0" *ngIf="imgUrl" />
+                                </div>
+                    </div>
+                </div>
+                <div class="row" id="icons">
+                    <div class="col-sm-2">
+                        <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-16-512.png" width="50px" height="50px" title="Humidity">
+                        <div>
+                            {{tempObj.currently.humidity}}
+                        </div>
+                    </div>
+            
+                    <div class="col-sm-2">
+                            <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-25-512.png" width="50px" height="50px" title="Temperature">
+                            <div>
+                                {{tempObj.currently.temperature}}
+                            </div>
+                    </div>
+            
+                    <div class="col-sm-2">
+                            <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-27-512.png" width="50px" height="50px" title="WindSpeed">
+                            <div>
+                                {{tempObj.currently.windSpeed}}
+                            </div>
+                    </div>
+            
+                    <div class="col-sm-2">
+                            <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-30-512.png" width="50px " height="50px" title="Visibility">
+                            <div>
+                                {{tempObj.currently.visibility}}
+                            </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                            <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-28-512.png" width="50px" height="50px" title="Cloud cover">
+                            <div style="padding-left: 12px;">
+                                0
+                            </div>
+                    </div>   
+                    
+                    <div class="col-sm-2">
+                            <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-24-512.png" width="50px" height="50px" title="Pressure">
+                            <div>
+                                {{tempObj.currently.pressure}}
+                            </div>
+                    </div>   
+                    
+                    <div class="col-sm-2">
+                        &nbsp;
+                    </div>
+                </div>            
+        </div>
+</div>

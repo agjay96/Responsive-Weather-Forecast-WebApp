@@ -1,0 +1,8 @@
+<div class="pt-30">
+    <div class="row">
+        <select [(ngModel)]='label' class=" form-control-sm col-sm-4" (change)="changeGr()">
+            <option *ngFor="let h of hourlys" value="{{h.value}}">{{h.label}}</option>
+        </select>
+    </div>
+    <app-graph [label]="label" [data]="data"></app-graph>
+</div>

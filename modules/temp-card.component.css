@@ -1,0 +1,75 @@
+@media (max-width:961px)  { 
+    .p-3{
+        padding: 0;
+    }
+
+    .card-body{
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+@media (max-width:960px) {
+    #identity-card{
+        margin: 0 !important;
+        padding: 10px !important;
+    }
+
+    #identity-card .col-md-6{
+        width: 50%;
+    }
+
+    .temp-head{
+        font-size: 1.5em;
+    }
+}
+
+#identity-card{
+    margin: 40px 150px;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: rgb(145, 216, 250);
+}
+
+.temp-head{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.clearp-summary{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.timezone{
+    margin-top: 5px;
+    font-size: 22px;
+}
+
+#icons{
+    text-align: left;
+}
+
+#icons img{
+    height: 35px;
+    width: auto;
+}
+
+#card-content{
+    margin-bottom: 35px !important;
+}
+
+.responsiveimge img{
+    height: 150px;
+    width: auto;
+
+    margin-top: 0;
+    border-radius: 50%;
+    /* border: 1px solid #fdfdfd; */
+}
+
+.col-sm-2{
+    width: 16.66%;
+}
